@@ -1,0 +1,332 @@
+Starting simple switch node app
+Express service is started------------------------
+startWebServer :: Got response, Web Server created
+ws started----
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+(node:1980) DeprecationWarning: current URL string parser is deprecated, and will be removed in a future version. To use the new parser, pass option { useNewUrlParser: true } to MongoClient.connect.
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:internal
+Dialplan response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:internal
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:internal
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:internal
+Dialplan response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Directory lookup response is sent
+Directory lookup response is sent
+send [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+    username: '1user',
+    password: 'user12' } ]
+{ status: 200,
+  data: 
+   [ { _id: 5b0e4d9e865a62c3b79e6fe4,
+       username: '1user',
+       password: 'user12' } ] }
+Directory lookup response is sent
+Call Profile:external
+Dialplan response is sent
