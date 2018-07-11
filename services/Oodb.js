@@ -22,6 +22,7 @@ function Oodb(){
             }
         });
 	}
+
 	function getConnection(cb){
 		if (dbconn && dbconn.serverConfig.isConnected()) {
             cb(null, dbconn);
@@ -36,6 +37,7 @@ function Oodb(){
             });
         }
 	}
+
 	function query(data, callback) {
         getConnection(function(err, db) {
             if (err) {
@@ -63,17 +65,15 @@ function Oodb(){
                 }
                 
                 data.options.fields = fields;
-                if (data.limit) {
+                if (isNaN(data.limit)) {
                     if (!data.skip) {
                         data.skip = 0;
                     }
-
                     var cursor = db.collection(data.tableName).find(data.query, data.options).sort(data.sort).skip(data.skip).limit(data.limit);
                     cursor.each(function(err, doc) {
                         if (doc != null) {
                             dataList.push(doc);
                         } else {
-
                             callback({ status: 200, data: dataList });
                         }
                     });
@@ -83,7 +83,6 @@ function Oodb(){
                         if (doc != null) {
                             dataList.push(doc);
                         } else {
-                        	console.log("send", dataList)
                             callback({ status: 200, data: dataList });
                         }
                     });

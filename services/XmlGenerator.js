@@ -1,6 +1,6 @@
 module.exports = XmlGenerator;
 
-function XmlGenerator() {
+function XmlGenerator(config) {
     var self = this;
     self.getUser = getUser;
     self.getOutFlow = getOutFlow;
@@ -71,7 +71,7 @@ function XmlGenerator() {
             '<action application="record_session" data="/home/audiofiles/${strftime(%Y-%m-%d)}/${uuid}.wav"/>' +
             '<action application="set" data="hangup_after_bridge=true"/>' +
             '<action application="set" data="continue_on_fail=true"/>' +
-            '<action application="bridge" data="{absolute_codec_string=PCMA}sofia/external/' + dialPrefix + to + '@10.1.1.128"/>' +
+            '<action application="bridge" data="{absolute_codec_string=PCMA,PCMU}sofia/external/' + dialPrefix + to + '@' + config.goipIP + '"/>' +
 
             '</condition>' +
             '</extension>' +
@@ -83,7 +83,6 @@ function XmlGenerator() {
 
     function getInFlow(req, cb) {
         var from = req.body['variable_sip_from_user'];
-        //var dialPrefix = from.charAt(0);
         var to = req.body['variable_sip_to_user'];
         xml = '<document type="freeswitch/xml">' +
             '<section name="dialplan">' +
@@ -93,8 +92,7 @@ function XmlGenerator() {
             '<action application="record_session" data="/home/audiofiles/${strftime(%Y-%m-%d)}/${uuid}.wav"/>' +
             '<action application="set" data="hangup_after_bridge=true"/>' +
             '<action application="set" data="continue_on_fail=true"/>' +
-            '<action application="bridge" data="sofia/internal/' + to + '%10.1.1.98"/>' +
-
+            '<action application="bridge" data="sofia/internal/' + to + '%'+config.hostIP+'"/>' +
             '</condition>' +
             '</extension>' +
             '</context>' +

@@ -1,0 +1,5 @@
+node_modules
+package-lock.json
+switch.log
+.cache
+.bash_history

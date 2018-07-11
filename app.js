@@ -1,30 +1,30 @@
-//
 console.log('Starting simple switch node app');
-
+var config = {
+    hostIP: '10.1.1.251',
+    goipIP: '10.1.1.128',
+    audioPath: "/home/audiofiles/"
+}
 var ws = require('./services/Rest');
 ws = new ws();
 var xmlgen = require('./services/XmlGenerator');
-xmlgen = new xmlgen();
+xmlgen = new xmlgen(config);
 var oodb = require('./services/Oodb');
 oodb = new oodb();
-// var goip = require('goip-sms');
-
-// var sms = new goip({ host: '10.1.1.128', user: 'admin', password: 'admin' });
-
-// sms.send({
-//         number: '+919884202053',
-//         message: 'Tarun Soni, Welcome to India',
-//         line: '1'
-//     })
-//     .then(function(response) {
-//         console.log('response', response.body);
-//     })
+var MediaServer = require('./services/mediaserver');
+ms = new MediaServer();
+var goip = require('goip-sms');
+var sms = new goip({ host: config.goipIP, user: 'admin', password: 'admin' });
 
 function startWebServer(cb) {
     var config = {};
-    config.host = 'localhost';
+    config.host = '0.0.0.0';
     config.port = '3031';
-    config.urls = [{ url: '/directory', method: 'post', callback: getDirectory }, { url: '/dialplan', method: 'post', callback: getDialPlan }];
+    config.urls = [
+        { url: '/directory', method: 'post', callback: getDirectory },
+        { url: '/dialplan', method: 'post', callback: getDialPlan },
+        { url: '/recordings', method: 'post', callback: recordings },
+        { url: '/listen', method: 'get', callback: listen }
+    ];
 
     ws.createServer(config, function(resdata) {
         console.log('startWebServer :: Got response, Web Server created');
@@ -45,6 +45,70 @@ function getDialPlan(req, res) {
         res.send(xml);
     });
 }
+
+function sendSMS(req, res) {
+    var line = req.body.from.replace("user", "");
+    sms.send({
+            number: req.body.number,
+            message: req.body.msg,
+            line: line
+        })
+        .then(function(response) {
+            console.log('response', response.body);
+            res.send({ status: 200 })
+        })
+}
+
+function recordings(req, res) {
+    // these are the only params we'll need
+    var dbObj = {
+        tableName: 'cdr',
+        limit: 50,
+        skip: 0,
+        query: {},
+        // "variables.answer_epoch", "variables.billsec",
+        include: ["variables.start_epoch", "app_log"],
+        exclude: ["_id"]
+    }
+
+    if (req.body.user) {
+        dbObj.query["variables.user_name"] = req.body.user;
+    }
+    if (!isNaN(req.body.limit) && req.body.limit > 0 && req.body.limit <= 100) {
+        dbObj.limit = req.body.limit;
+    }
+
+    if (!isNaN(req.body.skip) && req.body.skip > 0) {
+        dbObj.skip = req.body.skip;
+    }
+    oodb.query(dbObj, function(response) {
+        if (response.status == 200) {
+            for (var i = response.data.length - 1; i >= 0; i--) {
+                if (response.data[i].app_log && response.data[i].app_log[0].app_data) {
+                    response.data[i].recording = response.data[i].app_log[0].app_data;
+                    delete response.data[i].app_log;
+                    response.data[i].timestamp = response.data[i].variables.start_epoch;
+                    delete response.data[i].variables;
+                }
+            }
+
+            res.send({ status: 200, recordings: response.data })
+        } else {
+            res.send({ status: 500, msg: "unable to fetch records" })
+        }
+    });
+}
+
+function listen(req, res) {
+    var recording = "/home/audiofiles/2018-07-11/f6246114-84f6-11e8-8ccb-05d2dde99bc7.wav";
+    try {
+        // stat = fs.statSync(recording);
+        ms.play(req, res, recording);
+    } catch (error) {
+
+    }
+}
+
 startWebServer(function() {
     console.log('ws started----');
 
