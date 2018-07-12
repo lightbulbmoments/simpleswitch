@@ -2,6 +2,8 @@ function createSimple(callerURI, displayName, remoteVideo, buttonId) {
     var remoteVideoElement = document.getElementById(remoteVideo);
     console.log(remoteVideoElement)
     var button = document.getElementById(buttonId);
+    var answer = document.getElementById('answer');
+    
     var configuration = {
         media: {
             remote: {
@@ -14,9 +16,9 @@ function createSimple(callerURI, displayName, remoteVideo, buttonId) {
             traceSip: true,
             uri: callerURI,
             displayName: displayName,
-            wsServers: ['ws://10.1.1.251:5066'],
-            authorizationUser: '1user',
-            password: 'user12',
+            wsServers: ['ws://192.168.0.107:5066'],
+            authorizationUser: '2user',
+            password: 'user22',
             register: true,
             media: {
                 constraints: { audio: true, video: false }
@@ -36,9 +38,12 @@ function createSimple(callerURI, displayName, remoteVideo, buttonId) {
         button.firstChild.nodeValue = 'hang up';
     });
 
-    simple.on('ringing', function(e) {
-        // console.log("ringing", e)
-      simple.answer();
+    simple.on('ringing', function() {
+      console.log("ring ring")
+    });
+
+    answer.addEventListener('click', function() {
+        simple.answer()
     });
 
     // simple.on('registered', function(e){
@@ -67,7 +72,7 @@ function createSimple(callerURI, displayName, remoteVideo, buttonId) {
         // No current call up
         if (simple.state === SIP.Web.Simple.C.STATUS_NULL ||
             simple.state === SIP.Web.Simple.C.STATUS_COMPLETED) {
-            var target =  "+91" + document.getElementById("phoneNumber").value + "@10.1.1.251"
+            var target =  "+91" + document.getElementById("phoneNumber").value + "@192.168.0.107"
             simple.call(target);
         } else {
             simple.hangup();
@@ -77,4 +82,4 @@ function createSimple(callerURI, displayName, remoteVideo, buttonId) {
     return simple;
 }
 
-var myUser = createSimple('sip:1user@10.1.1.251:5060', "Tarun Soni", 'rStream', 'myBtn');
+var myUser = createSimple('sip:2user@192.168.0.107:5060', "Tarun Soni", 'rStream', 'myBtn');
