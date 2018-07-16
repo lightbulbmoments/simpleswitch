@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+      <script src="/static/sip-0.11.2.js"></script>
+    <title></title>
+</head>
+<body>
+  <div>
+      <button id="register" >register</button>
+      <button id="unregister" >unregister</button>
+      <br>
+    <video style="display: none" id="rStream"></video>
+    Phone number: <input type="number" minlength="10" maxlength="10" id="phoneNumber"><br>
+    MSG: <textarea id="msg" placeholder="">
+    </textarea>
+    <br>
+    <button id="myBtn">call</button>
+    <button id="sms" onclick="sendSMS()">SMS</button>
+
+    <button style="display:none; color: red" id="answer">answer</button>
+  </div>
+</body>
+<script src="/static/client.js"></script>
+</html>
