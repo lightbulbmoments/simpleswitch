@@ -1,7 +1,7 @@
 console.log('Starting simple switch node app');
 var config = {
-    hostIP: '10.1.1.251',
-    goipIP: '10.1.1.128',
+    hostIP: '192.168.0.106',
+    goipIP: '192.168.0.104',
     audioPath: "/home/audiofiles/"
 }
 var ws = require('./services/Rest');
@@ -23,7 +23,8 @@ function startWebServer(cb) {
         { url: '/directory', method: 'post', callback: getDirectory },
         { url: '/dialplan', method: 'post', callback: getDialPlan },
         { url: '/recordings', method: 'post', callback: recordings },
-        { url: '/listen', method: 'get', callback: listen }
+        { url: '/listen', method: 'get', callback: listen },
+	{ url: '/sms', method: 'post', callback: sendSMS}
     ];
 
     ws.createServer(config, function(resdata) {

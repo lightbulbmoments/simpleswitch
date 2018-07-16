@@ -43,7 +43,7 @@ function Oodb(){
             if (err) {
 
             } else {
-
+            	console.log(data);
                 var dataList = [];
                 var fields = {}
                 if (data.options == undefined) {
@@ -66,6 +66,9 @@ function Oodb(){
                 
                 data.options.fields = fields;
                 if (isNaN(data.limit)) {
+                    if (!data.limit) {
+                        data.limit = 0;
+                    }
                     if (!data.skip) {
                         data.skip = 0;
                     }

@@ -68,6 +68,7 @@ function XmlGenerator(config) {
             // '<action application="set" data="ccdata=' + userdata + '"/>' +
             // '<action application="set" data="enable_heartbeat_events=' + pulserate + '"/>' +
             //'<action application="set" data="media_bug_answer_req=true"/>'+
+            '<action application="answer"/>'+
             '<action application="record_session" data="/home/audiofiles/${strftime(%Y-%m-%d)}/${uuid}.wav"/>' +
             '<action application="set" data="hangup_after_bridge=true"/>' +
             '<action application="set" data="continue_on_fail=true"/>' +
