@@ -6,10 +6,20 @@
     <title></title>
 </head>
 <body>
-  <video id="rStream"></video>
-  <input type="number" minlength="10" maxlength="10" id="phoneNumber">
-  <button id="myBtn">call</button>
-  <button id="answer">answer</button>
+  <div>
+      <button id="register" >register</button>
+      <button id="unregister" >unregister</button>
+      <br>
+    <video style="display: none" id="rStream"></video>
+    Phone number: <input type="number" minlength="10" maxlength="10" id="phoneNumber"><br>
+    MSG: <textarea id="msg" placeholder="">
+    </textarea>
+    <br>
+    <button id="myBtn">call</button>
+    <button id="sms" onclick="sendSMS()">SMS</button>
+
+    <button style="display:none; color: red" id="answer">answer</button>
+  </div>
 </body>
 <script src="/static/client.js"></script>
 </html>
