@@ -6,7 +6,8 @@ function createSimple(callerURI, displayName, remoteVideo, buttonId) {
     var register = document.getElementById('register');
     var unregister = document.getElementById('unregister');
     
-    
+    var incomingCallAudio = new window.Audio('https://code.bandwidth.com/media/incoming_alert.mp3');
+    incomingCallAudio.loop = true;
     
     var configuration = {
         media: {
@@ -40,12 +41,14 @@ function createSimple(callerURI, displayName, remoteVideo, buttonId) {
     });
 
     simple.on('connected', function() {
+        incomingCallAudio.pause();
         remoteVideoElement.style.visibility = 'visible';
         button.firstChild.nodeValue = 'hang up';
     });
 
     simple.on('ringing', function() {
       console.log("ring ring");
+      incomingCallAudio.play();
       document.getElementById("answer").style.visibility = "block"
     });
 
